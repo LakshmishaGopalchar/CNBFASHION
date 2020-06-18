@@ -15,17 +15,8 @@ database = 'TX_MAFFashionDW'
 drivers = [item for item in pyodbc.drivers()]
 driver = drivers[-1]
 
-#conn = pyodbc.connect('Driver=driver;'
-#                      'Server=server_name;'
-#                      'Database=database_name;'
-#                      'Trusted_Connection=yes;')
-
-
 conn = pyodbc.connect('DRIVER='+driver+';SERVER='+server+';DATABASE='+database)
-
 cursor = conn.cursor()
-#cursor = cnxn.cursor()
-
 
 cursor.execute("select *  from TempRetailProduct where [Brand Code] = 'LEGO'")
 row = cursor.fetchone()
