@@ -15,14 +15,14 @@ database = 'TX_MAFFashionDW'
 drivers = [item for item in pyodbc.drivers()]
 driver = drivers[-1]
 
-conn = pyodbc.connect('DRIVER='+driver+';SERVER='+server+';DATABASE='+database)
-cursor = conn.cursor()
+#conn = pyodbc.connect('DRIVER='+driver+';SERVER='+server+';DATABASE='+database)
+#cursor = conn.cursor()
 
-cursor.execute("select *  from TempRetailProduct where [Brand Code] = 'LEGO'")
-row = cursor.fetchone()
-while row:
-    print (str(row[0]) + " " + str(row[1]))
-    row = cursor.fetchone()
+#cursor.execute("select *  from TempRetailProduct where [Brand Code] = 'LEGO'")
+#row = cursor.fetchone()
+#while row:
+#    print (str(row[0]) + " " + str(row[1]))
+#    row = cursor.fetchone()
 
 app = Flask(__name__)
 
