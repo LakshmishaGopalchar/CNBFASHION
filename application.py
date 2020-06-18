@@ -5,6 +5,7 @@ from flask import Flask
 from flask import Flask, jsonify
 #import spacy
 from flask import request
+import turicreate as tc
 
 server = 'MAFVAZEBISQL01'
 database = 'TX_MAFFashionDW'
