@@ -5,16 +5,23 @@ from flask import Flask
 from flask import Flask, jsonify
 #import spacy
 from flask import request
-import turicreate as tc
 
-server = 'MAFVAZEBISQL01'
-database = 'TX_MAFFashionDW'
-#username = 'aateam'
-#password = 'uKPdyRRNEK7qQ9xS'
+server = 'mafvdata.database.windows.net'
+database = 'mafvaa_in'
+username = 'aateam'
+password = 'uKPdyRRNEK7qQ9xS'
 #driver= '{ODBC Driver 17 for SQL Server}'
 drivers = [item for item in pyodbc.drivers()]
 driver = drivers[-1]
-print(driver)
+cnxn = pyodbc.connect('DRIVER='+driver+';PORT=1433;SERVER='+server+';PORT=1443;DATABASE='+database+';UID='+username+';PWD='+ password)
+cursor = cnxn.cursor()
+
+
+cursor.execute("Select * from [VOX].[DimItem_V]")
+row = cursor.fetchone()
+while row:
+    print (str(row[0]) + " " + str(row[1]))
+    row = cursor.fetchone()
 
 app = Flask(__name__)
 
