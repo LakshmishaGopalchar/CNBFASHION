@@ -16,19 +16,6 @@ drivers = [item for item in pyodbc.drivers()]
 driver = drivers[-1]
 print(driver)
 
-#sql_conn = pyodbc.connect('DRIVER={SQL Server Native Client 11.0};SERVER=MAFVAZEBISQL01;DATABASE=TX_MAFFashionDW;Trusted_Connection=yes') 
-
-#query="select distinct replace([Item ID],'-LEGO','') ItemID  from TempRetailProduct where [Brand Code] = 'LEGO'"
-
-#conn = pyodbc.connect('DRIVER='+driver+';PORT=1433;SERVER='+server+';DATABASE='+database;'Trusted_Connection=yes')
-#cursor = conn.cursor()
-
-#cursor.execute("select *  from TempRetailProduct where [Brand Code] = 'LEGO'")
-#row = cursor.fetchone()
-#while row:
-#    print (str(row[0]) + " " + str(row[1]))
-#    row = cursor.fetchone()
-
 app = Flask(__name__)
 
 app.debug = True
