@@ -14,6 +14,7 @@ database = 'TX_MAFFashionDW'
 #driver= '{ODBC Driver 17 for SQL Server}'
 drivers = [item for item in pyodbc.drivers()]
 driver = drivers[-1]
+print(driver)
 
 conn = pyodbc.connect('DRIVER='+driver+';SERVER='+server+';DATABASE='+database)
 cursor = conn.cursor()
