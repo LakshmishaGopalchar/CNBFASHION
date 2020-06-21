@@ -20,8 +20,8 @@ print(driver)
 
 #query="select distinct replace([Item ID],'-LEGO','') ItemID  from TempRetailProduct where [Brand Code] = 'LEGO'"
 
-conn = pyodbc.connect('DRIVER='+driver+';PORT=1433;SERVER='+server+';DATABASE='+database;'Trusted_Connection=yes')
-cursor = conn.cursor()
+#conn = pyodbc.connect('DRIVER='+driver+';PORT=1433;SERVER='+server+';DATABASE='+database;'Trusted_Connection=yes')
+#cursor = conn.cursor()
 
 #cursor.execute("select *  from TempRetailProduct where [Brand Code] = 'LEGO'")
 #row = cursor.fetchone()
