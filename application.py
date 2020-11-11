@@ -15,7 +15,7 @@ drivers = [item for item in pyodbc.drivers()]
 driver = drivers[-1]
 #sql_conn = pyodbc.connect('DRIVER={SQL Server Native Client 11.0};SERVER=MAFVDCBISQL03;DATABASE=MAFVCUSTDW;Trusted_Connection=yes') 
 
-cnxn = pyodbc.connect('DRIVER='+driver+';PORT=1433;SERVER='+server+';PORT=1443;DATABASE='+database+';UID='+username+';PWD='+ password;Trusted_Connection=yes')
+cnxn = pyodbc.connect('DRIVER='+driver+';PORT=1433;SERVER='+server+';PORT=1443;DATABASE='+database+';Trusted_Connection=yes')
 cursor = cnxn.cursor()
 
 
