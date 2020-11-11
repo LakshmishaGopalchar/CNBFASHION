@@ -22,9 +22,9 @@ cursor = cnxn.cursor()
 cursor.execute("Select * from DimDate")
 row = cursor.fetchone()
 
-while row:
-    print (str(row[0]) + " " + str(row[1]))
-    row = cursor.fetchone()
+#while row:
+#    print (str(row[0]) + " " + str(row[1]))
+#    row = cursor.fetchone()
 
 app = Flask(__name__)
 
