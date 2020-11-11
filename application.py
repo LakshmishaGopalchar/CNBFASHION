@@ -6,19 +6,22 @@ from flask import Flask, jsonify
 #import spacy
 from flask import request
 
-server = 'mafvdata.database.windows.net'
-database = 'mafvaa_in'
-username = 'aateam'
-password = 'uKPdyRRNEK7qQ9xS'
+server = 'MAFVDCBISQL03'
+database = 'MAFVCUSTDW'
+#username = 'aateam'
+#password = 'uKPdyRRNEK7qQ9xS'
 #driver= '{ODBC Driver 17 for SQL Server}'
 drivers = [item for item in pyodbc.drivers()]
 driver = drivers[-1]
-cnxn = pyodbc.connect('DRIVER='+driver+';PORT=1433;SERVER='+server+';PORT=1443;DATABASE='+database+';UID='+username+';PWD='+ password)
+#sql_conn = pyodbc.connect('DRIVER={SQL Server Native Client 11.0};SERVER=MAFVDCBISQL03;DATABASE=MAFVCUSTDW;Trusted_Connection=yes') 
+
+cnxn = pyodbc.connect('DRIVER='+driver+';PORT=1433;SERVER='+server+';PORT=1443;DATABASE='+database+';UID='+username+';PWD='+ password;Trusted_Connection=yes')
 cursor = cnxn.cursor()
 
 
-cursor.execute("Select * from [VOX].[DimItem_V]")
+cursor.execute("Select * from DimDate")
 row = cursor.fetchone()
+
 while row:
     print (str(row[0]) + " " + str(row[1]))
     row = cursor.fetchone()
@@ -36,4 +39,4 @@ def hello():
 @app.route("/jsonResrNew")
 def helloNew():
     
-    return (("succesfully inserted")) 
+    return (str(row[0])) 
